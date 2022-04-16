@@ -60,9 +60,7 @@
             android:name=".core.ui.setting.SettingsActivity"
             android:label="@string/title_setting" />
 
-        <activity
-            android:name=".core.ui.version_n_info.AboutActivity"
-            android:theme="@style/AppTheme.About" />
+        <activity android:name=".core.ui.version_n_info.AboutActivity" />
 
         <activity android:name=".core.ui.version_n_info.WelcomeActivity" />
 
