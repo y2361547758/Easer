@@ -17,6 +17,7 @@
     <color name="colorText_scriptInactive">#9E9E9E</color>
     <color name="colorText_invalid">@android:color/holo_red_dark</color>
 
+    <color name="edge">@android:color/black</color>
     <color name="nodeBackground">@color/JingLan</color>
     <color name="nodeBackground_VirtualRoot">@color/QunQing</color>
     <color name="nodeBackground_Profile">@color/JingHong</color>

@@ -4,4 +4,6 @@
     <color name="colorText">@android:color/white</color>
     <color name="colorTextInverse">@android:color/black</color>
 
+    <color name="edge">@android:color/white</color>
+
 </resources>

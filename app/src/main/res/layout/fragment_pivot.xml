@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         app:minZoom="0.1"
         app:maxZoomType="realZoom"
-        app:maxZoom="4">
+        app:maxZoom="4"
+        app:lineColor="@color/edge">
     </de.blox.graphview.GraphView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
