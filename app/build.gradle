@@ -18,8 +18,7 @@ android {
         applicationId 'ryey.easer'
         minSdkVersion 16
         multiDexEnabled true
-        //noinspection ExpiredTargetSdkVersion
-        targetSdkVersion 23
+        targetSdkVersion 30
         versionCode 127
         versionName "0.8.2.2"
 
