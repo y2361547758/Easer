@@ -18,3 +18,8 @@
 
 # ProGuard warns, but don't know why
 -keep class local_skill.eventplugin.EventData {*;}
+
+# Some libraries used by (maybe) ACRA(?).
+-dontwarn javax.annotation.processing.AbstractProcessor
+-dontwarn javax.annotation.processing.Processor
+-dontwarn javax.annotation.processing.SupportedOptions

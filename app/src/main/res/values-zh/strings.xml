@@ -192,4 +192,5 @@
     <string name="text_dynamics">動值</string>
     <string name="title_new_dynamics_link">新建動值鏈接</string>
     <string name="title_dynamics_link">動值链接</string>
+    <string name="prompt_acra_dialog_text">Easer剛剛不幸崩潰了。\n錯誤日誌已被捕獲（鳴謝ACRA庫）。\n您可以考慮將其發送給開發者以協助查錯。</string>
 </resources>

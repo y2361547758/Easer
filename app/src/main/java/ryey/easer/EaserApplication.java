@@ -20,12 +20,10 @@
 package ryey.easer;
 
 import android.Manifest;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import androidx.annotation.NonNull;
@@ -38,19 +36,13 @@ import com.orhanobut.logger.Logger;
 import com.zeugmasolutions.localehelper.LocaleHelperApplicationDelegate;
 
 import org.acra.ACRA;
-import org.acra.annotation.AcraCore;
-import org.acra.annotation.AcraToast;
-
-import java.io.File;
+import org.acra.config.CoreConfigurationBuilder;
+import org.acra.config.DialogConfigurationBuilder;
+import org.acra.config.MailSenderConfigurationBuilder;
 
 import ryey.easer.core.log.ActivityLogService;
 
-@AcraCore(buildConfigClass = BuildConfig.class,
-        reportSenderFactoryClasses = ErrorSenderFactory.class)
-@AcraToast(resText=R.string.prompt_error_logged)
 public class EaserApplication extends MultiDexApplication {
-
-    static final String LOG_DIR = new File(Environment.getExternalStorageDirectory(), "/logger/error").getAbsolutePath();
 
     private final LocaleHelperApplicationDelegate localeAppDelegate = new LocaleHelperApplicationDelegate();
 
@@ -85,6 +77,17 @@ public class EaserApplication extends MultiDexApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(localeAppDelegate.attachBaseContext(base));
-        ACRA.init(this);
+
+        ACRA.init(this, new CoreConfigurationBuilder()
+                .withPluginConfigurations(
+                        new MailSenderConfigurationBuilder()
+                                .withMailTo("bug-report@ryey.icu")
+                                .withReportAsFile(true)
+                                .build(),
+                        new DialogConfigurationBuilder()
+                                .withText(getString(R.string.prompt_acra_dialog_text))
+                                .build()
+                )
+        );
     }
 }
