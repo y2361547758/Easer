@@ -159,6 +159,7 @@
     <string name="title_service_start">服務啓動</string>
     <string name="title_pivot">樞律</string>
     <string name="pref_locale_custom">自定義語文</string>
+    <string name="pref_theme">主題</string>
     <string name="title_website">網站</string>
     <string name="url_donate">https://renyuneyun.github.io/Easer/zh/DONATE.html</string>
     <string name="title_author">作者</string>
@@ -191,4 +192,10 @@
     <string name="text_dynamics">動值</string>
     <string name="title_new_dynamics_link">新建動值鏈接</string>
     <string name="title_dynamics_link">動值链接</string>
+
+    <string-array name="array_themes">
+        <item>跟隨系統</item>
+        <item>亮色</item>
+        <item>暗色</item>
+    </string-array>
 </resources>

@@ -22,4 +22,6 @@
     <string name="key_pref_locale_custom" translatable="false">preference_locale_custom</string>
     <string name="key_pref_locale_lang" translatable="false">preference_locale_language</string>
 
+    <string name="key_pref_theme" translatable="false">preference_theme_mode</string>
+
 </resources>

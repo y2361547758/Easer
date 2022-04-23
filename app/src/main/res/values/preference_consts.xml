@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Do not translate this array! They are used as keys and should be the same regardless of locale. -->
-    <string-array name="array_languages_values">
+    <!-- Do not translate these arrays! They are used as keys or other const values and should be the same regardless of locale. -->
+
+    <string-array name="array_languages_values" translatable="false">
         <item>_</item>
         <item>zh</item>
         <item>ca</item>
@@ -56,4 +57,9 @@
         <item>Ukrainian</item>
     </string-array>
 
+    <string-array name="array_themes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

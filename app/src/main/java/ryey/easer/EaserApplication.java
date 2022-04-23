@@ -29,6 +29,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.multidex.MultiDexApplication;
 
@@ -52,6 +53,12 @@ public class EaserApplication extends MultiDexApplication {
 
     static final String LOG_DIR = new File(Environment.getExternalStorageDirectory(), "/logger/error").getAbsolutePath();
 
+    static final int[] THEME_NIGHT_MODE = {
+            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM,
+            AppCompatDelegate.MODE_NIGHT_NO,
+            AppCompatDelegate.MODE_NIGHT_YES,
+    };
+
     private final LocaleHelperApplicationDelegate localeAppDelegate = new LocaleHelperApplicationDelegate();
 
     @Override
@@ -70,6 +77,10 @@ public class EaserApplication extends MultiDexApplication {
                         .apply();
             }
         }
+
+        final int setting_theme = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                .getString(getString(R.string.key_pref_theme), "0"));
+        AppCompatDelegate.setDefaultNightMode(THEME_NIGHT_MODE[setting_theme]);
 
         startService(new Intent(this, ActivityLogService.class));
 

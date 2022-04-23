@@ -74,6 +74,12 @@
             android:entryValues="@array/array_languages_values"
             android:key="@string/key_pref_locale_lang"
             android:title="@string/pref_locale_custom" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/array_themes"
+            android:entryValues="@array/array_themes_values"
+            android:key="@string/key_pref_theme"
+            android:title="@string/pref_theme" />
     </PreferenceCategory>
 
     <PreferenceCategory android:layout="@layout/pref_divider" />

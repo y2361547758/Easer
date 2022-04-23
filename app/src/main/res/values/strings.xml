@@ -132,6 +132,7 @@
     <string name="pref_foreground_title">Run service in foreground</string>
     <string name="pref_foreground_summary">Make it harder to for the system to kill the service. A notification will be shown. Can not be turned off on Android 8+ because of a system requirement.</string>
     <string name="pref_locale_custom">Custom locale</string>
+    <string name="pref_theme">Theme</string>
     <string name="message_skill_not_compatible">This device can not run this skill.</string>
     <string name="message_convert_data_start">Converting data.</string>
     <string name="message_convert_data_finish">Data converted.</string>
@@ -193,4 +194,10 @@
     <string name="category_operation_easer">@string/easer</string>
     <string name="category_operation_misc">Misc</string>
     <string name="category_operation_unknown">Unknown</string>
+
+    <string-array name="array_themes">
+        <item>Follow system</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
 </resources>
