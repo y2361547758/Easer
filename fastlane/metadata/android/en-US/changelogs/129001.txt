@@ -1,0 +1,7 @@
+Added dark theme && Dependency updates && Bug fix && i18n update
+
+* Supports dark theme + added selector
+* Updated various dependencies to latest version
+* Targets API 30
+* Fix data of IntentOperation is lost when being used
+* I18n update: Spanish (Latin America)
