@@ -22,7 +22,7 @@ package ryey.easer.core.ui.version_n_info
 import android.content.Context
 import android.os.Bundle
 import android.preference.PreferenceManager
-import com.github.paolorotolo.appintro.AppIntro2
+import com.github.appintro.AppIntro2
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegateImpl
 import ryey.easer.R
 
@@ -43,7 +43,7 @@ class WelcomeActivity : AppIntro2() {
         addSlide(TextSlide.newInstance(R.string.welcome_message_3))
         addSlide(TextSlide.newInstance(R.string.title_welcome_message_privacy, R.string.welcome_message_privacy))
 
-        showSkipButton(true)
+        this.isSkipButtonEnabled = true
     }
 
     override fun onResume() {
