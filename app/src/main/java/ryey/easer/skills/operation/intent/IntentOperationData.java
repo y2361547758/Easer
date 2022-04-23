@@ -184,7 +184,7 @@ public class IntentOperationData implements OperationData, Reused {
         if (data.type != null)
             placeholders.addAll(Utils.extractPlaceholder(data.type));
         if (data.data != null)
-            placeholders.addAll(Utils.extractPlaceholder(data.data.getPath()));
+            placeholders.addAll(Utils.extractPlaceholder(data.data.toString()));
         if (data.extras != null) {
             for (ExtraItem extra : data.extras.extras) {
                 placeholders.addAll(Utils.extractPlaceholder(extra.key));
@@ -208,7 +208,7 @@ public class IntentOperationData implements OperationData, Reused {
         if (data.type != null)
             intentData.type = Utils.applyDynamics(data.type, dynamicsAssignment);
         if (data.data != null)
-            intentData.data = Uri.parse(Utils.applyDynamics(data.data.getPath(), dynamicsAssignment));
+            intentData.data = Uri.parse(Utils.applyDynamics(data.data.toString(), dynamicsAssignment));
         if (data.extras != null) {
             List<ExtraItem> extras = new ArrayList<>();
             for (ExtraItem extra : data.extras.extras) {
