@@ -194,6 +194,7 @@
     <string name="category_operation_easer">@string/easer</string>
     <string name="category_operation_misc">Misc</string>
     <string name="category_operation_unknown">Unknown</string>
+    <string name="prompt_acra_dialog_text">Easer just crashed.\nWe have captured the error information (thanks to ACRA library).\nYou can email the developer for bug report.</string>
 
     <string-array name="array_themes">
         <item>Follow system</item>
