@@ -20,6 +20,7 @@
 package ryey.easer.skills.operation.launch_app;
 
 import android.os.Parcel;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,15 +41,21 @@ public class LaunchAppOperationData implements OperationData {
     private static final String K_APP_PACKAGE = "package";
     private static final String K_CLASS = "class";
     private static final String K_EXTRAS = "extras";
+    private static final String K_ACTION = "action";
+    private static final String K_DATA = "data";
 
     final String app_package; //FIXME: @Nonnull???
     final @Nullable String app_class;
     final @Nullable Extras extras;
+    final @Nullable String app_action;
+    final @Nullable Uri app_data;
 
-    LaunchAppOperationData(String app_package, @Nullable String app_class, @Nullable Extras extras) {
+    LaunchAppOperationData(String app_package, @Nullable String app_class, @Nullable Extras extras, @Nullable String app_action, @Nullable Uri app_data) {
         this.app_package = app_package;
         this.app_class = app_class;
         this.extras = extras;
+        this.app_action = app_action;
+        this.app_data = app_data;
     }
 
     LaunchAppOperationData(@NonNull String data, @NonNull PluginDataFormat format, int version) throws IllegalStorageDataException {
@@ -59,6 +66,11 @@ public class LaunchAppOperationData implements OperationData {
                     app_package = jsonObject.getString(K_APP_PACKAGE);
                     app_class = jsonObject.optString(K_CLASS);
                     extras = Extras.mayParse(jsonObject.optString(K_EXTRAS), format, version);
+                    app_action = jsonObject.optString(K_ACTION);
+                    String data_s = jsonObject.optString(K_DATA);
+                    if (data_s != null) {
+                        app_data = Uri.parse(data_s);
+                    }
                 } catch (JSONException e) {
                     throw new IllegalStorageDataException(e);
                 }
@@ -77,6 +89,8 @@ public class LaunchAppOperationData implements OperationData {
                     jsonObject.put(K_CLASS, app_class);
                     if (extras != null)
                         jsonObject.put(K_EXTRAS, extras.serialize(format));
+                    jsonObject.put(K_ACTION, app_action);
+                    jsonObject.put(K_DATA, app_data.toString());
                     ret = jsonObject.toString();
                 } catch (JSONException e) {
                     throw new IllegalStateException(e);
@@ -104,6 +118,10 @@ public class LaunchAppOperationData implements OperationData {
             return false;
         if (!Utils.nullableEqual(extras, ((LaunchAppOperationData) obj).extras))
             return false;
+        if (!Utils.nullableEqual(app_action, ((LaunchAppOperationData) obj).app_action))
+            return false;
+        if (!Utils.nullableEqual(app_data, ((LaunchAppOperationData) obj).app_data))
+            return false;
         return true;
     }
 
@@ -117,6 +135,8 @@ public class LaunchAppOperationData implements OperationData {
         dest.writeString(app_package);
         dest.writeString(app_class);
         dest.writeParcelable(extras, 0);
+        dest.writeString(app_action);
+        dest.writeParcelable(app_data, 0);
     }
 
     public static final Creator<LaunchAppOperationData> CREATOR
@@ -134,6 +154,8 @@ public class LaunchAppOperationData implements OperationData {
         app_package = in.readString();
         app_class = in.readString();
         extras = in.readParcelable(Extras.class.getClassLoader());
+        app_action = in.readString();
+        app_data = in.readParcelable(Uri.class.getClassLoader());
     }
 
     @Nullable

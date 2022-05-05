@@ -84,6 +84,60 @@
         app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/editText_app_package" />
 
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/o_launch_app__text_action"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_app_action"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_app_action" />
+
+    <EditText
+        android:id="@+id/editText_app_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="@string/o_launch_app__text_action_hint"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView54"
+        app:layout_constraintTop_toBottomOf="@+id/editText_app_activity" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/o_launch_app__text_data"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_app_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_app_data" />
+
+    <EditText
+        android:id="@+id/editText_app_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="@string/o_launch_app__text_data_hint"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView55"
+        app:layout_constraintTop_toBottomOf="@+id/editText_app_action" />
+
     <fragment
         android:id="@+id/fragment_edit_extra"
         android:name="ryey.easer.skills.reusable.EditExtraFragment"
@@ -95,6 +149,6 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_app_activity" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_app_data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

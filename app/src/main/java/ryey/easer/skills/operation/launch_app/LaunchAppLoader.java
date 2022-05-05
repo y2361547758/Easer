@@ -43,6 +43,10 @@ public class LaunchAppLoader extends OperationLoader<LaunchAppOperationData> {
             intent = new Intent();
             intent.setComponent(new ComponentName(data.app_package, data.app_class));
         }
+        if (!Utils.isBlank(data.app_action))
+            intent.setAction(data.app_action);
+        if (!Utils.isBlank(data.app_data))
+            intent.setData(data.app_data);
         if (intent != null) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             if (data.extras != null)

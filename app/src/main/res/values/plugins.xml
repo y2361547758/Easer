@@ -148,6 +148,10 @@
     <string name="op_launch_app_text_app_hint">Package Name</string>
     <string name="o_launch_app__text_class">Class Name</string>
     <string name="o_launch_app__text_class_hint">Empty or full class name</string>
+    <string name="o_launch_app__text_action">Action</string>
+    <string name="o_launch_app__text_action_hint">Empty or Action name</string>
+    <string name="o_launch_app__text_data">Data</string>
+    <string name="o_launch_app__text_data_hint">Empty or Uri</string>
 
     <string name="operation_media_control">Media Control</string>
     <string name="text_play_pause">Toogle play/pause</string>

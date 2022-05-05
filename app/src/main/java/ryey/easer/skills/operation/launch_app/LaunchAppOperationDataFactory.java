@@ -37,7 +37,7 @@ class LaunchAppOperationDataFactory implements OperationDataFactory<LaunchAppOpe
     @NonNull
     @Override
     public LaunchAppOperationData dummyData() {
-        return new LaunchAppOperationData("com.dummy.app.package", "com.dummy.app.package.Activity1", null);
+        return new LaunchAppOperationData("com.dummy.app.package", "com.dummy.app.package.Activity1", null, null, null);
     }
 
     @ValidData

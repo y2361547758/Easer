@@ -38,6 +38,8 @@ public class LaunchAppSkillViewFragment extends SkillViewFragment<LaunchAppOpera
     EditText et_app_package;
     EditText et_class;
     EditExtraFragment editExtraFragment;
+    EditText et_app_action;
+    EditText et_app_data;
 
     @NonNull
     @Override
@@ -46,6 +48,8 @@ public class LaunchAppSkillViewFragment extends SkillViewFragment<LaunchAppOpera
         et_app_package = view.findViewById(R.id.editText_app_package);
         et_class = view.findViewById(R.id.editText_app_activity);
         editExtraFragment = (EditExtraFragment) getChildFragmentManager().findFragmentById(R.id.fragment_edit_extra);
+        et_app_action = view.findViewById(R.id.editText_app_action);
+        et_app_data = view.findViewById(R.id.editText_app_data);
         return view;
     }
 
@@ -54,12 +58,14 @@ public class LaunchAppSkillViewFragment extends SkillViewFragment<LaunchAppOpera
         et_app_package.setText(data.app_package);
         et_class.setText(data.app_class);
         editExtraFragment.fillExtras(data.extras);
+        et_app_action.setText(data.app_action);
+        et_app_data.setText(data.app_data.toString());
     }
 
     @ValidData
     @NonNull
     @Override
     public LaunchAppOperationData getData() throws InvalidDataInputException {
-        return new LaunchAppOperationData(et_app_package.getText().toString(), et_class.getText().toString(), editExtraFragment.getExtras());
+        return new LaunchAppOperationData(et_app_package.getText().toString(), et_class.getText().toString(), editExtraFragment.getExtras(), et_app_action.getText().toString(), Uri.parse(et_app_data.getText().toString()));
     }
 }

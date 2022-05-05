@@ -174,6 +174,10 @@
     <string name="op_launch_app_text_app_hint">包名</string>
     <string name="o_launch_app__text_class">類名</string>
     <string name="o_launch_app__text_class_hint">空白或完整類名</string>
+    <string name="o_launch_app__text_action">事件</string>
+    <string name="o_launch_app__text_action_hint">空白或事件名</string>
+    <string name="o_launch_app__text_data">數據</string>
+    <string name="o_launch_app__text_data_hint">空白或Uri</string>
     <string name="op_ui_mode">UI模式</string>
     <string name="op_car_mode">車載模式</string>
     <string name="op_normal_mode">普通模式</string>
